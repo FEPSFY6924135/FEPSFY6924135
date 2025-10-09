@@ -13,6 +13,27 @@
   
 </html>
 <head>
+  <title>Change button colour</title>
+<head>
+  <body>
+    <button id="colorbutton">Click me to change colour</button>
+
+    <script>
+      //Get a reference to the button element 
+      var button= document.getElementByld("colorButton);
+
+      //Function to change button color
+       function changecolor(){
+        //Generates a random color (hexadecimal)
+        var randomcolor="#"+ Math.floor(Math.random()*16777215).tostring(16);
+
+        //Set the button's backround color to random color
+        button.style.backgroundcolor= randomcolor;
+      }
+      //Add a click event listener to the button
+      button.addEventlistener("click", changecolor);
+    </script>
+  </body>
 <!style for tables>
 <style>
 table{
