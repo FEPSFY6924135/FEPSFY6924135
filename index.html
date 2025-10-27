@@ -165,6 +165,7 @@ table{
        Campbell, C, Critanini, N and Smola, A (2009), Query learning with large margin classfiers.
        In: Proc. 17th internat. Conf. On machine learning. Morgan Kaufman, Stanford, CA, 111-118.
        </pre></p>
+     <html>
      <head>
        <title>Alert Input Text</title>
      </head>
@@ -185,6 +186,29 @@ table{
          button.addEventlistener("click", showAlert);
           </script>
      </body>
+       <html>
+     <head>
+       <title>Random Number Generator</title>
+     </head>
+         <body>
+           <button id="generateButton">Generate Random Number</button>
+           <p id="randomNumber"></p>
+           <script>
+             //Get a reference to the button and paragraph
+             var button = document.getElementById("generateButton");
+             var paragraph = document.getElementById("randomNumber");
+
+             //Funtion to generate and display a random number 
+             funtion generateRandomNumber() {
+               var randomNumber = Math.floor(Math.random() *  10) + 1;
+               paragraph.textContent = "Random Number: " + randomNumber;
+             }
+             //Add a click event listener to the button
+             button.addEventlistener("click", generateRandomNumber);
+           </script>
+         </body>
+       </html>
+     
      
      
 
