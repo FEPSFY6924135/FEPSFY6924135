@@ -97,25 +97,7 @@
   
 </html>
 
-  <title>Change button colour</title>
 
-    <button id="colorbutton">Click me to change colour</button>
-
-    <script>
-      //Get a reference to the button element 
-      var button= document.getElementByld("colorbutton");
-
-      //Function to change button color
-       function changecolor(){
-        //Generates a random color (hexadecimal)
-        var randomcolor="#"+ Math.floor(Math.random()*16777215).tostring(16);
-
-        //Set the button's backround color to random color
-        button.style.backgroundcolor= randomcolor;
-      }
-      //Add a click event listener to the button
-      button.addEventlistener("click", changecolor);
-    </script>
   
 <!style for tables>
 <style>
@@ -214,12 +196,14 @@ table{
      Table 1: Data on cost and lifespan of bridge repairs
      <table>
        <tr>
-         <th>£ cost of repairs</th>
-         <th>Lifespan of repairs (years)</th>
+         <th>Advantage</th>
+         <th>Disadvantage</th>
+         <th>.</th>
        </tr>
        <tr>
-         <td>3.3m</td>
-         <td>4</td>
+         <td>Suegeon</td>
+         <td>Excellent hand-eye coordination</td>
+         <td>Limited operating vision and quantification</td>
        </tr>
        <tr>
          <td>2.6m</td>
@@ -276,29 +260,7 @@ table{
          button.addEventlistener("click", showAlert);
           </script>
      </body>
-       <html>
-     <head>
-       <title>Random Number Generator</title>
-     </head>
-         <body>
-           <button id="generateButton">Generate Random Number</button>
-           <p id="randomNumber"></p>
-           <script>
-             //Get a reference to the button and paragraph
-             var button = document.getElementById("generateButton");
-             var paragraph = document.getElementById("randomNumber");
-
-             //Funtion to generate and display a random number 
-             funtion generateRandomNumber() {
-               var randomNumber = Math.floor(Math.random() *  10) + 1;
-               paragraph.textContent = "Random Number: " + randomNumber;
-             }
-             //Add a click event listener to the button
-             button.addEventlistener("click", generateRandomNumber);
-           </script>
-         </body>
-       </html>
-     
+       
      
      
 
