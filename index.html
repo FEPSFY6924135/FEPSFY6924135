@@ -80,7 +80,7 @@ table{
 
      <h1><h3 id="Abstract">Abstract</h3></h1>
      <p class="ex1">
-  <p style="font-family:verdana">
+  <p id="Abstract_InText" style="font-family:verdana">
      Artificial intelligence and robots have been tools that are important in the engineering
      and manufacturing industry as it makes the processes easier for example in the car manufacturing
      industry. These two ideas could also be combined to explore the topic of artificial intelligence in
@@ -90,7 +90,7 @@ table{
   
      
 <h1><h3 id="Introduction">Introduction</h3></h1>
-<p style="font-family:verdana">
+<p id="Introduction_InText" style="font-family:verdana">
     Recently surgical robot system (SRS) have been receiving widespread attention, as surgeons working
     on patients requires years of expertise and practice, therefore using an SRS would increase prescient,
     accuracy and would not be limited to physical limitations such as fatigue which a traditional surgeon 
@@ -150,7 +150,7 @@ table{
 
     <h1><h3 id="Surgical Robots">Surgical Robots</h3></h1>
        
-   <p style="font-family:verdana">
+   <p  id="Surgical Robots_InText" style="font-family:verdana">
    
     Da Vinci is a surgical robot system with the goal of  " helping surgeons provide the best minimally
     invasive surgery to as many patients as possible. Redesigned from the inside out, da Vinci 5 brings
@@ -159,7 +159,7 @@ table{
     systems, 2025). The basic structure of surgical robots contains mechanical systems, control systems
     and human-machine interface. 
    </p>
-    <p style="font-family:verdana">
+    <p  id="Surgical Robots_InText" style="font-family:verdana">
       Mechanical systems is the robotic arms, end effectors, and actuators. End effectors are  tools
       attached to the end of a robotic arms which performs tasks, these devices could be robotic hands,
       tools or sensors. The different types of effectors are used for different tasks for example robotic
@@ -175,7 +175,7 @@ table{
       actuators use compressed air to move, these are fast but less precise compared to electric and
       hydraulic actuators, these are mostly used for pick and place robots in factories.
       </p>
-    <p style="font-family:verdana">
+    <p id="Surgical Robots_InText" style="font-family:verdana">
     Moving onto the control systems of surgical robots includes the kinematics, dynamic, and real- time
     feedback loops. Kinematics is all about the how the robot moves, for example if the surgeon wants to
     move the tool in a certain direction geometry and motion will have to be used to make sure the tool
@@ -185,21 +185,21 @@ table{
     and the actuator moves the robot arms, sensors measure actual position, the final steps are
     comparison and correction.
     </p>
-    <p style="font-family:verdana">
+    <p id="Surgical Robots_InText" style="font-family:verdana">
     Human-machine interface (HMI) is the communication between the human and the robot (how the
     human gives commands and receives feedback). Main components in HMI are the input devices,
     output devices, control console, computer system, safety interface. There are also different types of
     feedback such as visual, force/ haptic, and auditory.
     </p>
-    <p style="font-family:verdana">
+    <p id="Surgical Robots_InText" style="font-family:verdana">
     Earlier systems depended heavily on human control, and AI integration in SRS aims to introduce
     increased precision, safety and efficiency.
 
   </p></body>
 
-     <h1><h3 id=" Artifiial intelligence in surgical robot systems (SRS)"> Artifiial intelligence in surgical robot systems (SRS)</h3></h1>
+     <h1><h3 id=" Artifiial intelligence in surgical robot systems"> Artifiial intelligence in surgical robot systems (SRS)</h3></h1>
     
-     <p style="font-family:verdana">
+     <p id="Artifiial intelligence in surgical robot systems_InText" style="font-family:verdana">
        Integration of AI in SRS will enhance the accuracy and precision. One way in which AI is
        integrated is by using images which help identify tissues and important structures during surgery giving surgeons’ clear guidance.
        Machine- learning algorithms also support tasks such as suturing (medical term for stitching a wound) , motion planning and tremor
@@ -262,9 +262,14 @@ table{
   function displayTotalWordCount() {
     // Calculate word count for each section and accumulate the total
     const IntroductionCount = displayWordCount("Introduction_InText");
-    const AnalysisCount = displayWordCount("Analysis_InText");
+    const AbstractCount = displayWordCount("Abstract_InText");
+    const SurgicalRobotscount = displayWordCount("Surgical Robots_InText");
+     const ArtifiialintelligenceinsurgicalrobotsystemsCount = displayWordCount("Artifiial intelligence in surgical robot systems_InText");
+    
+    
+    
     // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount;
+    const totalWordCount = IntroductionCount + AnalysisCount + SurgicalRobots + Artifiialintelligenceinsurgicalrobotsystems
     // Display the total word count
     document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
   }
