@@ -1,21 +1,112 @@
-Result Size: 551 x 573
-6
-​
+<!DOCTYPE html>
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+    <!-- Last commit time display -->
+<div id="last-updated">Loading last update time...</div>
+<!-- Verify Button -->
+<button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+    Verify Last Modified Time
+</button>
+<script>
+    async function getLastUpdatedTime() {
+        const username = 'FEPSFY6924135';
+        const repo = 'FEPSFY6924135';
+       
+        const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+        try {
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+            }
+            const commits = await response.json();
+            if (commits && commits.length > 0) {
+                const lastCommitDate = new Date(commits[0].commit.committer.date);
+               
+                // Displaying the time on load
+                document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+            } else {
+                document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+            }
+        } catch (error) {
+            console.error('Error fetching the last updated time:', error);
+            document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+        }
+    }
+    // Function to verify the last update time by re-fetching it from the API
+    async function verifyLastUpdatedTime() {
+        document.getElementById('last-updated').innerText = 'Verifying...';
+        await getLastUpdatedTime();
+        alert("Last modified time has been successfully verified from GitHub API.");
+    }
+    // Initial load to display the time on page load
+    window.onload = getLastUpdatedTime;
+</script>
+
+
+
+  <html>
+  <head>
+   <style>
+body {background-color: 	Cornsilk;}
+h1   {color: 	Maroon;}
+p    {color: 	Black; font-family: Arial;} 
+</style>
+</head>
+   <img src="WebBanner2023-Photoroom.png" alt="Banner" width="950" height="250">
+    <h1><b>ENG0018 Computer Laboratory 2025/26</b></h1>.
+    <h2>Student URN: 6924135</h2>
+    <hr>
+    <h1><h2 style="font-family: calibri;"><b><centre>Conference paper: Artificial Intelligence In Surgical Robots</centre></b></h2></h1>
+    <hr>
+  
+
+
+  
+<!style for tables>
+<style>
+table{
+  font-family: arial, sans-serif;
+  border-collpase: collapse;
+  width: 30%;
+
+}
+
+  td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding:8px;
+  }
+
+ tr:nth-child(even) {
+  background-color: #D2B48C;
+}
+   .mySlides {display:none;}
+
+   p.ex1 {
+    margin-left: 250px;
+  }
+
  
   </style>
 </head>
-​
-​
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1>
   <link rel=stylehseet" href="https://www.w3schools.com/w3css/4/w3.css">
  
-​
-​
-​
-​
+
+
+
+
      <!table of contents>
      <table>
-​
+
        <tr>
          <th><h3>Table of contents</h3></th>
        </tr>
@@ -28,16 +119,16 @@ Result Size: 551 x 573
        <tr>
          <td><a href="#Surgical Robots">Surgical Robots</td>
        </tr>
-​
+
        <tr>
          <td><a href="# Artifiial intelligence in surgical robot systems (SRS)"> Artificial intelligence in surgical robot systems</td>
        </tr>
-​
+
        <tr>
          <td><a href="#References">References</td>
        </tr>
      </table>
-​
+
      <h1><h3 id="Abstract">Abstract</h3></h1>
      <p class="ex1">
      Artificial intelligence and robots have been tools that are important in the engineering
@@ -58,7 +149,7 @@ Result Size: 551 x 573
     System) developed by Scuola Superiore Sant'Anna - CRIM Lab, Italy. The patient swallows the
     individual parts of the robot which then self-assembles inside the body ready to aid the surgeon.”
     (Liz Lear, 2011)
-​
+
  </p>
 <img src="https://www.medicaldevice-network.com/wp-content/uploads/sites/23/2020/03/cmr-surgical-versius-clinical-setup-4-arms-00013-2.jpg" alt="surgical robot" width="300" height="200">
     <p>
@@ -67,4 +158,177 @@ Result Size: 551 x 573
      
      Table 1: Comparison between surgeons and current SRS
      <table>
+       <tr>
+          <th></th>
+         <th>Advantage</th>
+         <th>Disadvantage</th>
+        
+       </tr>
+       <tr>
+         <td>Surgeon</td>
+         <td>Excellent hand-eye coordination</td>
+         <td>Limited operating vision and quantification</td>
+       </tr>
+       
+       <tr>
+         <td></td>
+         <td>Adaptability and excellent judgment</td>
+         <td>Limited accuracy and stability</td>
+       </tr>
+       
+       <tr>
+       <td></td>  
+       <td>Better dexterity</td>
+       <td>Radiation and virus infection during surgery</td>
+       </tr>
+       
+       <tr>
+         <td>SRS</td>
+         <td>Visual support</td>
+         <td>Limited visual-motion coordiation</td>
+       </tr>
+
+       <tr>
+         <td></td>
+         <td>Stability, quantification, and accuracy</td>
+         <td>Poor judgement and week adaptability</td>
+       </tr>
+
+       <tr>
+         <td></td>
+         <td>Ability to intergrate multiple sources of data</td>
+         <td>Limited ability to process complex information</td>
+       </tr>
+     </table>
+
+    <h1><h3 id="Surgical Robots">Surgical Robots</h3></h1>
+       
+   <p  id="Robots1_InText" style="font-family:verdana">
+   
+    Da Vinci is a surgical robot system with the goal of  " helping surgeons provide the best minimally
+    invasive surgery to as many patients as possible. Redesigned from the inside out, da Vinci 5 brings
+    more than 150 design innovations and 10,000x the computing power1 to deliver greater surgeon
+    autonomy, more streamlined OR workflow, and advanced data analytics." (Da Vinci 5 surgical 
+    systems, 2025). The basic structure of surgical robots contains mechanical systems, control systems
+    and human-machine interface. 
+   </p>
+    <p  id="Robots2_InText" style="font-family:verdana">
+      Mechanical systems is the robotic arms, end effectors, and actuators. End effectors are  tools
+      attached to the end of a robotic arms which performs tasks, these devices could be robotic hands,
+      tools or sensors. The different types of effectors are used for different tasks for example robotic
+      hands (also known as grippers) are mostly used in an assembly line, but in a surgical robot this could
+      be used to pick up a scalpel or camera. Tools would be fitted according to the task you want to
+      perform, and you would be able to modify the end effector according to that. Sensors are used for
+      gathering data, types of sensors that could be used care force or pressure sensors. Actuators are also
+      a mechanical aspect of robots, these are the parts that moves the robot, when compared to the
+      human body they act as muscles and convert energy into mechanical motion. The different types of
+      actuators are electric, hydraulic and pneumatic. Electric actuators use electric motors and are used in
+      small and precise robots. Hydraulic actuators use pressurized fluids to create motion on these can be
+      very powerful and are used in heavy- duty robots in industries such as construction. Pneumatic
+      actuators use compressed air to move, these are fast but less precise compared to electric and
+      hydraulic actuators, these are mostly used for pick and place robots in factories.
+      </p>
+    <p id="Robots3_InText" style="font-family:verdana">
+    Moving onto the control systems of surgical robots includes the kinematics, dynamic, and real- time
+    feedback loops. Kinematics is all about the how the robot moves, for example if the surgeon wants to
+    move the tool in a certain direction geometry and motion will have to be used to make sure the tool
+    does not come into contact with any other organs as this could be a crucial mistake.  Dynamic control
+    ensures smooth a stable motion in surgical robots. Finally real- time feedback loops start from an
+    input in this case the surgeon moving the controls, then the controller calculates the desired position
+    and the actuator moves the robot arms, sensors measure actual position, the final steps are
+    comparison and correction.
+    </p>
+    <p id="Robots4_InText" style="font-family:verdana">
+    Human-machine interface (HMI) is the communication between the human and the robot (how the
+    human gives commands and receives feedback). Main components in HMI are the input devices,
+    output devices, control console, computer system, safety interface. There are also different types of
+    feedback such as visual, force/ haptic, and auditory.
+    </p>
+    <p id="Robots5_InText" style="font-family:verdana">
+    Earlier systems depended heavily on human control, and AI integration in SRS aims to introduce
+    increased precision, safety and efficiency.
+
+  </p></body>
+
+     <h1><h3 id="Artificial intelligence in surgical robot systems">Artificial intelligence in surgical robot systems</h3></h1>
+    
+     <p id="Robots6_InText" style="font-family:verdana">
+       Integration of AI in SRS will enhance the accuracy and precision. One way in which AI is
+       integrated is by using images which help identify tissues and important structures during surgery giving surgeons’ clear guidance.
+       Machine- learning algorithms also support tasks such as suturing (medical term for stitching a wound) , motion planning and tremor
+       suppression, allowing these medical robots to perform a range of medical tasks with a greater consistency than human operators (Mahmood et al., 2018). 
+       
+       Taking everything into consideration integrating these systems into the medical field required safety framework, algorithms, 
+       and high-quality training datasets to ensure reliability (Hashimoto et al., 2020).  Overall, this will be a significant step in
+       the medical field with it being more autonomous and efficient in surgical practice. 
+     </p>
+
+    
+<h1><h3 id="References">References</h3></h1>
+    
+
+       
+       
+    
+</body>
+   <p><pre>  
+   Lear, L. (2011) Surgical Robots. The IET. Available at:
+<a href="https://www.theiet.org/publishing/inspec/researching-hot-topics/surgical-robots"> https://www.theiet.org/publishing/inspec/researching-hot-topics/surgical-robots</a>
+   </p></pre>
+    <P><pre>
+   Liu, Y., Wu, X., Sang, Y., Zhao, C. & Wang, Y. (2024) ‘Evolution of Surgical Robot Systems Enhanced by
+   Artificial Intelligence: A Review’, 21 April. Available at:
+  <a href="https://advanced.onlinelibrary.wiley.com/doi/10.1002/aisy.202300268">https://advanced.onlinelibrary.wiley.com/doi/10.1002/aisy.202300268</a>
+    </P></pre>
+    <p><pre>
+   Intuitive Surgical (2025) da Vinci 5 Surgical System receives CE mark, 2 July. Available at:
+  <a href="https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitives-da-vinci-5-surgical-system-receives-ce-mark"> https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitives-da-vinci-5-surgical-system-receives-ce-mark</a>
+    </p></pre>
+    <P><pre>
+   Mahmood, F., Durr, N.J. & Wellman, P., 2018. Deep learning in surgical robotics. Nature Biomedical
+   Engineering, 2(10), pp.719–726.
+    </P></pre>
+    <p><pre>
+   Hashimoto, D.A., Rosman, G., Rus, D. & Meireles, O.R., 2020. Artificial intelligence in surgery: 
+   Promises and perils. Annals of Surgery, 272(1), pp.70–76.
+</p></pre>
+
+    <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const Robots1Count = displayWordCount("Robots1_InText");
+    const Robots2Count = displayWordCount("Robots2_InText");
+    const Robots3Count = displayWordCount("Robots3_InText");
+    const Robots4Count = displayWordCount("Robots4_InText");
+    const Robots5Count = displayWordCount("Robots5_InText");
+    const Robots6Count = displayWordCount("Robots6_InText");
+    
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + Robots1Count + Robots2Count + Robots3Count + Robots4Count + Robots5Count + Robots6Count 
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
+    
 
